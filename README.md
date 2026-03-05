@@ -4,36 +4,41 @@
 
 ## Introduction
 
-This project develops and evaluates machine learning models to predict customer churn in a SaaS environment. Churn prediction is formulated as a supervised binary classification problem, where customers are classified as **churned (1)** or **retained (0)** based on behavioral, financial, and support-related features.
+This project develops and evaluates machine learning models to predict customer churn. I treated churn prediction as a binary classification problem, where customers are classified as **churned (1)** or **retained (0)** based on behavioral, financial, and support-related features.
 
 The dataset contains 7,000+ customer records with variables such as tenure, monthly logins, average session time, customer satisfaction (CSAT), pricing changes, payment failures, support tickets, contract type, and revenue metrics.
 
 ### Project Objectives
 
-1. Compare multiple classification models under class imbalance  
-2. Identify the most influential predictors of churn  
-3. Translate predictive insights into actionable business implications  
+The objective of this project is to run multiple different data models and determine which model provides the highest accuracy and can detect when a customer is most likely to churn.
+Logistic Regression
+Gaussian Naive Bayes
+Categorical Naive Bayes
+Random Forest
+
+---
+
+## Data Source
+
+I gathered our data from kaggle, which is an online community platform, that contains free-to-use data. Here is the link to the data used to train the model: https://www.kaggle.com/datasets/muhammadshahidazeem/customer-churn-dataset
 
 ---
 
 ## Data Summary
 
-- **Total observations:** 7,000+  
-- **Target variable:** Binary churn indicator  
-- **Class distribution:** ~10% churn, ~90% retained  
+There are 7000+ total customers with their history on either they have still churned, or did not churn. based on this dataset, ~10% are customers that churned and ~90 are customers that have not churned.
 
-The dataset contains both numerical and categorical variables representing engagement behavior, financial activity, and customer experience metrics.
+There is huge discrepancy of churn vs not churn customers, however because of this, we will rely on ROC-AUC and not soleley on accuracy.
 
-Due to class imbalance, evaluation prioritizes **ROC-AUC, precision, recall, and confusion matrix analysis**, rather than relying solely on accuracy.
+I acknowledge that the dataset contains both numerical and categorical variables 
+
+We also acknowledge that some metrics defined in this dataset may not bear any influence if a customer is to churn or not.
 
 ---
 
 ## Data Preprocessing
 
-- Missing value handling  
-- One-hot encoding for categorical variables  
-- Feature scaling (where required)  
-- Stratified train/test split to preserve churn distribution  
+Before training the models, the dataset was carefully prepared to ensure reliable results. I began by identifying and handling missing values to maintain data consistency. Categorical variables were then converted into numerical form using one-hot encoding so the models could properly interpret them. Where appropriate, feature scaling was applied to keep variables on comparable ranges. Finally, the data was randomly split into training and testing sets using a stratified approach to preserve the original churn distribution, ensuring the models were evaluated on a representative sample of customers. this meant that our training data was 70% of the data and our test was 30%. This also meant that the churned customres we equally split into both training data and the test data.
 
 ---
 
