@@ -8,6 +8,9 @@ This project develops and evaluates machine learning models to predict customer 
 
 The dataset contains 7,000+ customer records with variables such as tenure, monthly logins, average session time, customer satisfaction (CSAT), pricing changes, payment failures, support tickets, contract type, and revenue metrics.
 
+
+---
+
 ### Project Objectives
 
 The objective of this project is to run multiple different data models and determine which model provides the highest accuracy and can detect when a customer is most likely to churn.
